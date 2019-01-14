@@ -102,9 +102,11 @@ $(document).ready(function() {
     let parsedVal = []
     for(let i in currentVal)
       parsedVal.push(currentVal[i].data);
-    // appending the last 10 operations logged from the array
-    for (let i = parsedVal.length - 10; i < parsedVal.length; i++) {
+    // appending each operation logged in the array
+    for (let i = parsedVal.length -1; i > parsedVal.length - 11 ; i--) {
+      console.log(i)
       $("#history").append(`<li>${parsedVal[i]}</li>`)
+
     }
   })
 
