@@ -1,0 +1,77 @@
+$colors: (
+  regular-blue: #4db6ac,
+  dark-blue: #00867d,
+  light-blue: #82e9de,
+  black: #260e04,
+  white: white,
+  regular-orange: #f57f17,
+  light-orange: #ffb04c,
+  dark-orange: #bc5100,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+};
+
+$shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
+
+button {
+  width: 80px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: $shadow; 
+  &.number {
+    background-color: color(regular-blue);
+    color: color(white);
+  }
+  &.operator {
+    background-color: color(light-orange);
+    color: color(black)
+  }
+  &.equal {
+    background-color: color(regular-orange);
+  }
+  &.clear {
+    background-color: color(dark-orange);
+    color: color(white);
+  }
+}
+
+nav {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  grid-area: navbar;
+}
+
+section {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 20px;
+
+  &.calculator {
+    grid-area: calculator;
+  }
+  &.results {
+    grid-area: result;
+  }
+  &.history {
+    grid-area: history;
+  }
+}
+
+main {
+  display: grid;
+  grid-row-gap: 1px;
+  grid-column-gap: 9px; 
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+  "navbar navbar navbar"
+  "calculator result history"
+}
+
+

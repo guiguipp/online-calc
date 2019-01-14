@@ -1,0 +1,75 @@
+button {
+  width: 80px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+button.number {
+  background-color: #4db6ac;
+  color: white;
+}
+
+button.operator {
+  background-color: #ffb04c;
+  color: #260e04;
+}
+
+button.equal {
+  background-color: #f57f17;
+}
+
+button.clear {
+  background-color: #bc5100;
+  color: white;
+}
+
+nav {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: navbar;
+}
+
+section {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 20px;
+}
+
+section.calculator {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: calculator;
+}
+
+section.results {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: result;
+}
+
+section.history {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: history;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 1px;
+  grid-column-gap: 9px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "navbar navbar navbar" "calculator result history";
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1 class="text-center">Online Calculator</h1>
+  </nav>
+
+  <main class="content">
+    <!-- Calculator Panel -->
+    <section class="calculator">  
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Calculator</h3>
+          </div>
+
+          <div class="panel-body">
+            <button id="button-1" class="number" value="1"><h1>1</h1></button>
+            <button id="button-2" class="number" value="2"><h1>2</h1></button>
+            <button id="button-3" class="number" value="3"><h1>3</h1></button>
+            <button id="button-plus" class="operator" value="plus"><h1>+</h1></button>
+            <br><br>
+            <button id="button-4" class="number" value="4"><h1>4</h1></button>
+            <button id="button-5" class="number" value="5"><h1>5</h1></button>
+            <button id="button-6" class="number" value="6"><h1>6</h1></button>
+            <button id="button-minus" class="operator" value="minus"><h1>&minus;</h1></button>
+            <br><br>
+            <button id="button-7" class="number" value="7"><h1>7</h1></button>
+            <button id="button-8" class="number" value="8"><h1>8</h1></button>
+            <button id="button-9" class="number" value="9"><h1>9</h1></button>
+            <button id="button-multiply" class="operator" value="times"><h1>&times;</h1></button>
+            <br><br>
+            <button id="button-0" class="number" value="0"><h1>0</h1></button>
+            <button id="button-divide" class="operator" value="divide"><h1>&divide;</h1></button>
+            <button id="button-power" class="operator" value="power"><h1>^</h1></button>
+            <button id="button-equal" class="equal" value="equals"><h1>=</h1></button>
+            <br><br>
+            <button id="button-clear" class="clear" value="clear"><h1>clear</h1></button>
+          </div>
+        </div>
+    </section>
+
+      <!-- Operations -->
+      <section class="results">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Operation</h3>
+          </div>
+          <div class="panel-body">
+            <h1 id="first-number"></h1>
+            <h1 id="operator"></h1>
+            <h1 id="second-number"></h1>
+            <hr>
+            <h1 id="result"></h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="history">
+        <h3>History</h3>
+        <div id="history" class="panel"></div>
+      </section>
+  </main>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+<script src="./app.js"></script>
+</html>
