@@ -83,7 +83,12 @@ $(document).ready(function() {
       }
       else if (operator === "divide") {
         operator = "/"
-        result = firstNumber / secondNumber;
+        if (secondNumber !== 0) {
+          result = firstNumber / secondNumber;
+        }
+        else {
+          result = "You cannot divide by 0"
+        }
       }
       else if (operator === "power") {
         operator = "^"

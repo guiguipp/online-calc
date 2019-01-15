@@ -4,12 +4,24 @@ body {
 }
 
 button {
-  width: 80px;
+  width: 40px;
   font-size: 12px;
   text-align: center;
   border-radius: 20px;
   -webkit-box-shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 320px) {
+  button {
+    width: 60px;
+  }
+}
+
+@media (min-width: 660px) {
+  button {
+    width: 80px;
+  }
 }
 
 button.number {
@@ -51,9 +63,24 @@ button.equal:active, button.clear:active {
   background-color: #f57f17;
 }
 
+.calc {
+  margin: auto;
+}
+
+.line {
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .line {
+    min-width: 400px;
+  }
+}
+
 nav {
   height: 100px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   grid-area: navbar;
   background-color: #40241a;
@@ -70,6 +97,14 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 5%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+li {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 li:nth-of-type(1) {
@@ -113,10 +148,13 @@ li:nth-of-type(10) {
 }
 
 main {
+  margin-top: 125px;
   display: -ms-grid;
   display: grid;
   grid-row-gap: 5px;
   grid-column-gap: 9px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
       grid-template-areas: " calculator " " result " "history ";
 }
 
@@ -126,6 +164,22 @@ main {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "calculator result" "history history";
   }
+  main section.calculator {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: calculator;
+  }
+  main section.results {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: result;
+  }
+  main section.history {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: history;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -133,6 +187,21 @@ main {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: "calculator result history";
+  }
+  main section.calculator {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: calculator;
+  }
+  main section.results {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: result;
+  }
+  main section.history {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: history;
   }
 }
 

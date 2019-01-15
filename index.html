@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Online Calculator</title>
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <link href="https://fonts.googleapis.com/css?family=Audiowide|Raleway" rel="stylesheet">
@@ -21,28 +22,37 @@
             <h3 class="panel-title">Calculator</h3>
           </div>
 
-          <div class="panel-body">
-            <button id="button-1" class="number" value="1"><h1>1</h1></button>
-            <button id="button-2" class="number" value="2"><h1>2</h1></button>
-            <button id="button-3" class="number" value="3"><h1>3</h1></button>
-            <button id="button-plus" class="operator" value="plus"><h1>+</h1></button>
-            <br><br>
-            <button id="button-4" class="number" value="4"><h1>4</h1></button>
-            <button id="button-5" class="number" value="5"><h1>5</h1></button>
-            <button id="button-6" class="number" value="6"><h1>6</h1></button>
-            <button id="button-minus" class="operator" value="minus"><h1>&minus;</h1></button>
-            <br><br>
-            <button id="button-7" class="number" value="7"><h1>7</h1></button>
-            <button id="button-8" class="number" value="8"><h1>8</h1></button>
-            <button id="button-9" class="number" value="9"><h1>9</h1></button>
-            <button id="button-multiply" class="operator" value="times"><h1>&times;</h1></button>
-            <br><br>
-            <button id="button-0" class="number" value="0"><h1>0</h1></button>
-            <button id="button-divide" class="operator" value="divide"><h1>&divide;</h1></button>
-            <button id="button-power" class="operator" value="power"><h1>^</h1></button>
-            <button id="button-equal" class="equal" value="equals"><h1>=</h1></button>
-            <br><br>
-            <button id="button-clear" class="clear" value="clear"><h1>clear</h1></button>
+          <div class="panel-body calc">
+            <div class="line">
+              <button id="button-1" class="number" value="1"><h1>1</h1></button>
+              <button id="button-2" class="number" value="2"><h1>2</h1></button>
+              <button id="button-3" class="number" value="3"><h1>3</h1></button>
+              <button id="button-plus" class="operator" value="plus"><h1>+</h1></button>
+            </div>
+            
+            <div class="line">
+              <button id="button-4" class="number" value="4"><h1>4</h1></button>
+              <button id="button-5" class="number" value="5"><h1>5</h1></button>
+              <button id="button-6" class="number" value="6"><h1>6</h1></button>
+              <button id="button-minus" class="operator" value="minus"><h1>&minus;</h1></button>
+            </div>
+
+            <div class="line">
+              <button id="button-7" class="number" value="7"><h1>7</h1></button>
+              <button id="button-8" class="number" value="8"><h1>8</h1></button>
+              <button id="button-9" class="number" value="9"><h1>9</h1></button>
+              <button id="button-multiply" class="operator" value="times"><h1>&times;</h1></button>
+            </div>
+            
+            <div class="line">
+              <button id="button-0" class="number" value="0"><h1>0</h1></button>
+              <button id="button-divide" class="operator" value="divide"><h1>&divide;</h1></button>
+              <button id="button-power" class="operator" value="power"><h1>^</h1></button>
+              <button id="button-equal" class="equal" value="equals"><h1>=</h1></button>
+            </div>
+            <div class="line">
+              <button id="button-clear" class="clear" value="clear"><h1>C</h1></button>
+            </div>
           </div>
         </div>
     </section>
