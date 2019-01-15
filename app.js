@@ -68,30 +68,31 @@ $(document).ready(function() {
     // Use parseInt to convert our string into integers
     firstNumber = parseInt(firstNumber);
     secondNumber = parseInt(secondNumber);
-
-    if (operator === "plus") {
-      operator = "+"
-      result = firstNumber + secondNumber;
+    if(Number.isInteger(firstNumber) && Number.isInteger(secondNumber)) {
+      if (operator === "plus") {
+        operator = "+"
+        result = firstNumber + secondNumber;
+      }
+      else if (operator === "minus") {
+        operator = "-"
+        result = firstNumber - secondNumber;
+      }
+      else if (operator === "times") {
+        operator = "*"
+        result = firstNumber * secondNumber;
+      }
+      else if (operator === "divide") {
+        operator = "/"
+        result = firstNumber / secondNumber;
+      }
+      else if (operator === "power") {
+        operator = "^"
+        result = Math.pow(firstNumber, secondNumber);
+      }
+      $("#result").text(result);
+      // we log and send the data to Firebase
+      sendToFirebase(`${firstNumber} ${operator} ${secondNumber} = ${result}\n`)
     }
-    else if (operator === "minus") {
-      operator = "-"
-      result = firstNumber - secondNumber;
-    }
-    else if (operator === "times") {
-      operator = "*"
-      result = firstNumber * secondNumber;
-    }
-    else if (operator === "divide") {
-      operator = "/"
-      result = firstNumber / secondNumber;
-    }
-    else if (operator === "power") {
-      operator = "^"
-      result = Math.pow(firstNumber, secondNumber);
-    }
-    $("#result").text(result);
-    // we log and send the data to Firebase
-    sendToFirebase(`${firstNumber} ${operator} ${secondNumber} = ${result}\n`)
   });
 
   // Getting a snapshot from calculation data saved in Firebase. 
