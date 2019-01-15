@@ -96,7 +96,7 @@ $(document).ready(function() {
       }
       $("#result").text(result);
       // we log and send the data to Firebase
-      sendToFirebase(`${firstNumber} ${operator} ${secondNumber} = ${result}\n`)
+      sendToFirebase(`${firstNumber} ${operator} ${secondNumber} = ${result}`)
     }
   });
 
@@ -108,14 +108,11 @@ $(document).ready(function() {
     let parsedVal = []
     for(let i in currentVal)
       parsedVal.push(currentVal[i].data);
-    // appending each operation logged in the array
+    // appending last 10 operations from most recent to oldest
     for (let i = parsedVal.length -1; i > parsedVal.length - 11 ; i--) {
-      console.log(i)
       $("#history").append(`<li>${parsedVal[i]}</li>`)
-
     }
   })
-
 
   // Send data to Firebase
   const sendToFirebase = (input) => {
