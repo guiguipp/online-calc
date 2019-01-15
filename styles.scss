@@ -1,4 +1,8 @@
+// colors
 $colors: (
+  main-regular: #6d4c41,
+  main-light: #9c786c,
+  main-dark: #40241a,
   regular-blue: #4db6ac,
   dark-blue: #00867d,
   light-blue: #82e9de,
@@ -13,28 +17,84 @@ $colors: (
   @return map-get($colors, $color-name);
 };
 
+
+// fonts
+$font-stack: (
+  primary: #{"Audiowide"},
+  secondary:#{"Raleway"}
+);
+@function font($font-name) {
+  @return map-get($font-stack, $font-name)
+};
+
+// Screen Resizing
+$screen-sm: 660px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// larger devices
+@mixin lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
 $shadow: 3px 4px 8px 0px rgba(0, 0, 0, 0.2);
+
+body {
+  background-color: color(main-regular);
+  font-family: font(secondary);
+}
 
 button {
   width: 80px;
   font-size: 12px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: $shadow; 
   &.number {
     background-color: color(regular-blue);
     color: color(white);
+    &:hover {
+      background-color: color(light-blue)
+    }
+    &:active {
+      background-color: color(dark-blue)
+    }
   }
   &.operator {
-    background-color: color(light-orange);
-    color: color(black)
-  }
-  &.equal {
     background-color: color(regular-orange);
+    color: color(black);
+    &:hover{
+      background-color: color(light-orange)
+    };
+    &:active{
+      background-color: color(dark-orange)
+    }
   }
-  &.clear {
+  &.equal, &.clear {
     background-color: color(dark-orange);
     color: color(white);
+    &:hover {
+      background-color: color(light-orange)
+    }
+    &:active {
+      background-color: color(regular-orange)
+    }
   }
 }
 
@@ -43,15 +103,79 @@ nav {
   width: 100%;
   text-align: center;
   grid-area: navbar;
+  background-color: color(main-dark);
+  color: white;
+  font-family: font(primary);
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+li {
+  &:nth-of-type(1) {
+    color: color(black);
+  }
+  &:nth-of-type(2) {
+    color: lighten(color(black),3%)
+  }
+  &:nth-of-type(3) {
+    color: lighten(color(black),6%)
+  }
+  &:nth-of-type(4) {
+    color: lighten(color(black),9%)
+  }
+  &:nth-of-type(5) {
+    color: lighten(color(black),12%)
+  }
+  &:nth-of-type(6) {
+    color: lighten(color(black),15%)
+  }
+  &:nth-of-type(7) {
+    color: lighten(color(black),18%)
+  }
+  &:nth-of-type(8) {
+    color: lighten(color(black),21%)
+  }
+  &:nth-of-type(9) {
+    color: lighten(color(black),24%)
+  }
+  &:nth-of-type(10) {
+    color: lighten(color(black),27%)
+  } 
+}
+
+main {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-column-gap: 9px; 
+  grid-template-areas: 
+  " calculator "
+  " result "
+  "history ";
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "calculator result"
+    "history history";
+  }
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "calculator result history";
+  }
 }
 
 section {
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 3px;
   padding: 20px;
+  background-color: color(main-light);
+  color: white;
 
   &.calculator {
     grid-area: calculator;
@@ -63,15 +187,3 @@ section {
     grid-area: history;
   }
 }
-
-main {
-  display: grid;
-  grid-row-gap: 1px;
-  grid-column-gap: 9px; 
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: 
-  "navbar navbar navbar"
-  "calculator result history"
-}
-
-
